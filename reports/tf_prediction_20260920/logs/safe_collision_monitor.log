@@ -1,0 +1,23 @@
+1789884508.597282 [190] safe_colli: selected interface "lo" is not multicast-capable: disabling multicast
+[INFO] [1789884508.611173981] [collision_monitor]: 
+	collision_monitor lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1789884509.565994963] [collision_monitor]: Configuring
+[INFO] [1789884509.572720873] [collision_monitor]: [StopZone]: Creating Polygon
+[INFO] [1789884509.575284203] [collision_monitor]: [SlowZone]: Creating Polygon
+[INFO] [1789884509.578450124] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789884509.582779464] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789884509.583463530] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789884509.609163652] [collision_monitor]: Activating
+[INFO] [1789884509.609389743] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1789884534.141423690] [rclcpp]: signal_handler(signum=2)
+[INFO] [1789884534.141909731] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[INFO] [1789884534.143100062] [collision_monitor]: Deactivating
+[INFO] [1789884534.143243910] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789884534.153615022] [collision_monitor]: Cleaning up
+[INFO] [1789884534.153770166] [collision_monitor]: [StopZone]: Destroying Polygon
+[INFO] [1789884534.153828121] [collision_monitor]: [SlowZone]: Destroying Polygon
+[INFO] [1789884534.153852730] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789884534.156674824] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789884534.281655752] [collision_monitor]: Destroying

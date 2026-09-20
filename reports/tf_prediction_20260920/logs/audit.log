@@ -1,0 +1,127 @@
+1789884514.185196 [190]    python3: selected interface "lo" is not multicast-capable: disabling multicast
+{
+  "duration_s": 3.0009349250012747,
+  "message_age_ms": {
+    "TF odom -> base_link": {
+      "samples": 150,
+      "median": 2.361367,
+      "p95": 3.635704,
+      "max": 5.425682,
+      "min": 1.594832
+    },
+    "/odom": {
+      "samples": 150,
+      "median": 2.903347,
+      "p95": 4.711918,
+      "max": 7.020707,
+      "min": 2.059529
+    },
+    "/cloud_obstacles": {
+      "samples": 29,
+      "median": 82.185359,
+      "p95": 85.57001,
+      "max": 85.572922,
+      "min": 81.166011
+    }
+  },
+  "diagnostic_values": {
+    "/odom_prediction/anchor_age_ms": {
+      "samples": 150,
+      "median": 131.8662109375,
+      "p95": 175.4453125,
+      "max": 186.65576171875,
+      "min": 81.07829284667969
+    },
+    "/odom_prediction/imu_age_ms": {
+      "samples": 150,
+      "median": 7.457733154296875,
+      "p95": 7.64155387878418,
+      "max": 8.712291717529297,
+      "min": 2.4442672729492188
+    },
+    "/odom_prediction/processing_ms": {
+      "samples": 150,
+      "median": 1.0101310014724731,
+      "p95": 3.257733106613159,
+      "max": 4.9524431228637695,
+      "min": 0.608223021030426
+    },
+    "/collision_monitor/processing_ms": {
+      "samples": 59,
+      "median": 20.553104400634766,
+      "p95": 30.809175491333008,
+      "max": 30.995424270629883,
+      "min": 10.386541366577148
+    },
+    "/odom_prediction/correction_position_m": {
+      "samples": 29,
+      "median": 7.740761986951838e-08,
+      "p95": 1.46381765375736e-07,
+      "max": 1.6220830900692818e-07,
+      "min": 1.908476043865903e-09
+    },
+    "/odom_prediction/correction_rotation_rad": {
+      "samples": 29,
+      "median": 9.030888747929566e-08,
+      "p95": 1.7077871916626464e-07,
+      "max": 1.8924301059541904e-07,
+      "min": 2.2265493893058874e-09
+    }
+  },
+  "tf_age_at_periodic_query_ms": {
+    "TF odom -> base_link": {
+      "samples": 10,
+      "median": 18.903228,
+      "p95": 22.755104,
+      "max": 22.755104,
+      "min": 3.019097
+    }
+  },
+  "tf_lookup_budget_ms": 50,
+  "tf_lookup_warmup_s": 2,
+  "tf_lookup_wait_ms": {
+    "odom -> base_link at request time": {
+      "samples": 10,
+      "median": 18.25727599862148,
+      "p95": 21.854033999261446,
+      "max": 21.854033999261446,
+      "min": 2.705033000893309
+    }
+  },
+  "tf_lookup_failures": {
+    "map -> base_link at request time": 10
+  },
+  "tf_lookups_pending_at_end": 0,
+  "health": {
+    "/odom_prediction/valid": {
+      "samples": 150,
+      "valid": 150,
+      "invalid": 0
+    },
+    "/collision_monitor/ready": {
+      "samples": 59,
+      "valid": 59,
+      "invalid": 0
+    }
+  },
+  "reasons": {
+    "/odom_prediction/reason": {
+      "ok": 150
+    },
+    "/collision_monitor/reason": {
+      "ok": 59
+    }
+  },
+  "note": "Receipt age includes scheduling and transport; missing topics are not healthy by default. Registration age -1 means no accepted result.",
+  "acceptance": {
+    "passed": false,
+    "failures": [
+      "Use at least 10 seconds for commissioning; 60 seconds recommended",
+      "TF map -> odom rate below 40 Hz or absent",
+      "TF map -> odom receipt age exceeds P95 20 ms / maximum 50 ms",
+      "map -> base_link at request time failed 50 ms lookup budget or has no successful samples",
+      "Localization confidence absent or below 0.7"
+    ],
+    "scope": "Proposed TF/data timing gate only. Requires initialized localization; does not verify pose accuracy or physical stopping distance."
+  }
+}

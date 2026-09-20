@@ -1,0 +1,12 @@
+[ 33%] Built target open3d_registration
+[ 66%] Built target open3d_conversions
+Consolidate compiler generated dependencies of target global_localization_node
+[ 83%] Building CXX object CMakeFiles/global_localization_node.dir/src/global_localization.cpp.o
+In file included from /usr/include/open3d/Open3D.h:31,
+                 from /home/koala2/nav_ws/src/open3d_loc/src/global_localization.cpp:25:
+/usr/include/open3d/camera/PinholeCameraIntrinsic.h: In member function ‘std::pair<double, double> open3d::camera::PinholeCameraIntrinsic::GetFocalLength() const’:
+/usr/include/open3d/camera/PinholeCameraIntrinsic.h:93:54: note: parameter passing for argument of type ‘std::pair<double, double>’ when C++17 is enabled changed to match C++14 in GCC 10.1
+   93 |     std::pair<double, double> GetFocalLength() const {
+      |                                                      ^
+[100%] Linking CXX executable global_localization_node
+[100%] Built target global_localization_node

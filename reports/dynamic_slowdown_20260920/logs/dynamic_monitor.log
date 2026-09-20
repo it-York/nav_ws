@@ -1,0 +1,45 @@
+1789887651.888133 [191] safe_colli: selected interface "lo" is not multicast-capable: disabling multicast
+[INFO] [1789887651.898645593] [collision_monitor]: 
+	collision_monitor lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1789887652.670543736] [collision_monitor]: Configuring
+[INFO] [1789887652.675183127] [collision_monitor]: [StopZone]: Creating Polygon
+[INFO] [1789887652.676003443] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887652.677989079] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887652.678476136] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887652.693051836] [collision_monitor]: Activating
+[INFO] [1789887652.693216449] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887688.055723375] [collision_monitor]: Deactivating
+[INFO] [1789887688.055935766] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887688.242760658] [collision_monitor]: Cleaning up
+[INFO] [1789887688.245011935] [collision_monitor]: [StopZone]: Destroying Polygon
+[INFO] [1789887688.246140454] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887688.366996868] [collision_monitor]: Configuring
+
+>>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+This error state is being overwritten:
+
+  'timer is canceled, at ./src/rcl/timer.c:249'
+
+with this new error message:
+
+  'Handle's typesupport identifier (rosidl_typesupport_cpp) is not supported by this library, at ./src/type_support_dispatch.hpp:111'
+
+rcutils_reset_error() should be called after error handling to avoid this.
+<<<
+[INFO] [1789887688.370740421] [collision_monitor]: [StopZone]: Creating Polygon
+[INFO] [1789887688.371463646] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887688.372830221] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887688.373255451] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887688.389154494] [collision_monitor]: Activating
+[INFO] [1789887688.389298819] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887690.664409449] [rclcpp]: signal_handler(signum=2)
+[INFO] [1789887690.664730900] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[INFO] [1789887690.665038110] [collision_monitor]: Deactivating
+[INFO] [1789887690.665112225] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887690.675429444] [collision_monitor]: Cleaning up
+[INFO] [1789887690.675516391] [collision_monitor]: [StopZone]: Destroying Polygon
+[INFO] [1789887690.675572041] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887690.678745334] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887690.789177678] [collision_monitor]: Destroying

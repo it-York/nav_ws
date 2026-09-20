@@ -1,0 +1,91 @@
+{
+  "source": "User-pasted check_tf_timing.py --duration 15 output; not independently recollected by assistant",
+  "report_date": "2026-09-20",
+  "capture_timestamp": null,
+  "date_note": "Filed under the conversation date; output did not include an absolute capture timestamp or robot motion/load state.",
+  "timing": {
+    "duration_s": 15.008878158000698,
+    "message_age_ms": {
+      "/Odometry": {
+        "samples": 150,
+        "median": 60.231243,
+        "p95": 77.706231,
+        "max": 171.528193,
+        "min": 40.886771
+      },
+      "TF odom -> base_link": {
+        "samples": 150,
+        "median": 66.420206,
+        "p95": 85.240545,
+        "max": 175.474588,
+        "min": 44.058321
+      },
+      "/odom": {
+        "samples": 150,
+        "median": 64.135508,
+        "p95": 81.883836,
+        "max": 173.659989,
+        "min": 44.615015
+      },
+      "TF map -> odom": {
+        "samples": 150,
+        "median": 66.150282,
+        "p95": 85.083771,
+        "max": 173.069597,
+        "min": 45.102615
+      },
+      "TF camera_init -> body": {
+        "samples": 150,
+        "median": 62.542071,
+        "p95": 81.155744,
+        "max": 170.681823,
+        "min": 46.861596
+      },
+      "/cloud_obstacles": {
+        "samples": 137,
+        "median": 70.186327,
+        "p95": 89.204039,
+        "max": 177.979045,
+        "min": 54.489645
+      }
+    },
+    "diagnostic_values": {
+      "/localization_3d_registration_age_ms": {
+        "samples": 150,
+        "median": 1528.3895263671875,
+        "p95": 2628.6650390625,
+        "max": 2728.737548828125,
+        "min": 228.69342041015625
+      },
+      "/localization_3d_registration_duration_ms": {
+        "samples": 150,
+        "median": 150.84494018554688,
+        "p95": 167.7367401123047,
+        "max": 167.7367401123047,
+        "min": 140.4966278076172
+      },
+      "/localization_3d_confidence": {
+        "samples": 150,
+        "median": 0.9493827223777771,
+        "p95": 0.9528371691703796,
+        "max": 0.9528371691703796,
+        "min": 0.9473428726196289
+      },
+      "/fastlio_odom_bridge/input_age_ms": {
+        "samples": 150,
+        "median": 57.36488342285156,
+        "p95": 73.94525146484375,
+        "max": 164.9174041748047,
+        "min": 38.88147735595703
+      },
+      "/fastlio_odom_bridge/processing_ms": {
+        "samples": 150,
+        "median": 0.4855870008468628,
+        "p95": 1.5017869472503662,
+        "max": 6.055214881896973,
+        "min": 0.27844300866127014
+      }
+    },
+    "note": "Receipt age includes scheduling and transport; missing topics are not healthy by default. Registration age -1 means no accepted result."
+  }
+}

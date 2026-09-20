@@ -1,0 +1,37 @@
+{
+  "work_directory": "/tmp/nav_ws_prediction_test_po4i75tb",
+  "checks": [
+    "Valid prediction and motion-compensated empty cloud permit test command",
+    "50 Hz delayed-anchor prediction matches analytic translating / turning trajectory with actual mounting",
+    "Timing auditor resolves current-time odom within 50 ms and rejects missing map TF",
+    "175 ms estimator delay remains inside bounded prediction horizon",
+    "obstacle stops; valid fresh cloud recovers",
+    "bad_tf stops; valid fresh cloud recovers",
+    "stale stops; valid fresh cloud recovers",
+    "malformed stops; valid fresh cloud recovers",
+    "bad_offset stops; valid fresh cloud recovers",
+    "IMU outage inhibits TF and commands; fresh anchored IMU history recovers",
+    "Pointcloud outage stops; fresh pointcloud recovers",
+    "Independent motion bridge rejects stale_odom despite fresh message receipt",
+    "Independent motion bridge rejects future_odom despite fresh message receipt",
+    "Independent motion bridge rejects stale_cloud despite fresh message receipt",
+    "Independent motion bridge rejects nan_command despite fresh message receipt",
+    "IMU timestamp rollback latches stop until predictor restart",
+    "Explicit predictor restart restores valid output after rollback",
+    "Estimator outage exceeds horizon and latches stop when correction resumes",
+    "Half-metre estimator correction jump latches stop"
+  ],
+  "prediction_rate_hz": 50.0,
+  "pose_xy_error_max_m": 2.0554552750168638e-07,
+  "odom_receipt_age_ms": {
+    "median": 1.85011,
+    "p95": 3.10787,
+    "max": 4.043565
+  },
+  "monitor_processing_ms": {
+    "samples": 477,
+    "median": 10.596602439880371,
+    "max": 53.718441009521484
+  },
+  "success": true
+}

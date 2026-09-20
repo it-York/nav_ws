@@ -1,0 +1,54 @@
+<!--
+  Navigate to the original goal while reacting quickly to dynamic obstacles.
+
+  The MID360 obstacle cloud feeds both collision-monitor safety polygons and
+  the global/local costmaps.  At 4 Hz this tree validates the current global
+  path against the updated global costmap.  An invalid path is recomputed
+  immediately; a still-valid path is refreshed every three seconds so a
+  lower-cost detour can replace a narrow/high-cost corridor.
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithDynamicObstacleReplanning">
+        <RateController hz="4.0">
+          <RecoveryNode number_of_retries="1" name="ComputePathToPose">
+            <Fallback name="KeepOrReplanPath">
+              <ReactiveSequence name="KeepValidFreshPath">
+                <Inverter>
+                  <PathExpiringTimer seconds="3.0" path="{path}"/>
+                </Inverter>
+                <Inverter>
+                  <GlobalUpdatedGoal/>
+                </Inverter>
+                <IsPathValid path="{path}"/>
+              </ReactiveSequence>
+              <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+            </Fallback>
+            <ClearEntireCostmap name="ClearGlobalCostmap-Context"
+              service_name="global_costmap/clear_entirely_global_costmap"/>
+          </RecoveryNode>
+        </RateController>
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="FollowPath"/>
+          <ClearEntireCostmap name="ClearLocalCostmap-Context"
+            service_name="local_costmap/clear_entirely_local_costmap"/>
+        </RecoveryNode>
+      </PipelineSequence>
+      <ReactiveFallback name="RecoveryFallback">
+        <GoalUpdated/>
+        <RoundRobin name="RecoveryActions">
+          <Sequence name="ClearingActions">
+            <ClearEntireCostmap name="ClearLocalCostmap-Subtree"
+              service_name="local_costmap/clear_entirely_local_costmap"/>
+            <ClearEntireCostmap name="ClearGlobalCostmap-Subtree"
+              service_name="global_costmap/clear_entirely_global_costmap"/>
+          </Sequence>
+          <Spin spin_dist="1.57"/>
+          <Wait wait_duration="3"/>
+          <BackUp backup_dist="0.20" backup_speed="0.05"/>
+        </RoundRobin>
+      </ReactiveFallback>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

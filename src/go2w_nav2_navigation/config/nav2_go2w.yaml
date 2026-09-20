@@ -1,0 +1,314 @@
+map_server:
+  ros__parameters:
+    use_sim_time: false
+    yaml_filename: ""
+
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    expected_planner_frequency: 2.0
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_smac_planner/SmacPlanner2D"
+      tolerance: 0.20
+      downsample_costmap: false
+      allow_unknown: false
+      max_iterations: 1000000
+      max_on_approach_iterations: 1000
+      # Prefer the lower-cost corridor centre before reaching a wall corner.
+      cost_travel_multiplier: 2.5
+      smooth_path: true
+
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    controller_frequency: 10.0
+    min_x_velocity_threshold: 0.01
+    min_y_velocity_threshold: 0.01
+    min_theta_velocity_threshold: 0.01
+    failure_tolerance: 0.30
+    progress_checker_plugin: "progress_checker"
+    goal_checker_plugins: ["goal_checker"]
+    controller_plugins: ["FollowPath"]
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.20
+      movement_time_allowance: 12.0
+    goal_checker:
+      plugin: "nav2_controller::SimpleGoalChecker"
+      stateful: true
+      xy_goal_tolerance: 0.18
+      yaw_goal_tolerance: 0.20
+    FollowPath:
+      # MPPI handles turning, forward motion and limited reverse together.
+      # Humble RotationShim samples paths at now(), which was repeatedly ahead
+      # of this 10 Hz lidar-derived TF and blocked control for its TF timeout.
+      plugin: "nav2_mppi_controller::MPPIController"
+      # Match model_dt to the controller period. Preserve a 3.2 s horizon
+      # with fewer trajectory samples on this Jetson.
+      time_steps: 32
+      model_dt: 0.10
+      batch_size: 1000
+      vx_std: 0.25
+      vy_std: 0.0
+      wz_std: 0.40
+      # Indoor corner profile; the independent emergency stop stays enabled.
+      vx_max: 0.60
+      # Reverse is a fallback, not the preferred response to a goal behind.
+      vx_min: -0.18
+      vy_max: 0.0
+      wz_max: 0.70
+      iteration_count: 1
+      # Cover the 3.2 s horizon at 0.60 m/s without truncating the target path.
+      prune_distance: 2.4
+      transform_tolerance: 0.25
+      temperature: 0.30
+      gamma: 0.015
+      motion_model: "DiffDrive"
+      visualize: false
+      regenerate_noises: false
+      critics: ["ConstraintCritic", "CostCritic", "GoalCritic", "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic", "PathAngleCritic", "PreferForwardCritic"]
+      ConstraintCritic: {enabled: true, cost_power: 1, cost_weight: 4.0}
+      CostCritic:
+        enabled: true
+        cost_power: 1
+        # Keep footprint checking. The user-selected local inflation radius
+        # is below the circumscribed radius; corner clearance needs validation.
+        cost_weight: 4.0
+        critical_cost: 300.0
+        consider_footprint: true
+        collision_cost: 1000000.0
+        near_goal_distance: 0.8
+      GoalCritic: {enabled: true, cost_power: 1, cost_weight: 5.0, threshold_to_consider: 1.4}
+      GoalAngleCritic: {enabled: true, cost_power: 1, cost_weight: 3.0, threshold_to_consider: 0.5}
+      PathAlignCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 8.0
+        # Release the global-path alignment earlier when a dynamic obstacle
+        # blocks the nominal path, so MPPI can generate a local detour.
+        max_path_occupancy_ratio: 0.03
+        trajectory_point_step: 4
+        threshold_to_consider: 0.5
+        offset_from_furthest: 20
+        use_path_orientations: false
+      PathFollowCritic: {enabled: true, cost_power: 1, cost_weight: 5.0, offset_from_furthest: 5, threshold_to_consider: 1.4}
+      PathAngleCritic: {enabled: true, cost_power: 1, cost_weight: 4.0, offset_from_furthest: 4, threshold_to_consider: 0.5, max_angle_to_furthest: 1.0, mode: 0}
+      PreferForwardCritic: {enabled: true, cost_power: 1, cost_weight: 5.0, threshold_to_consider: 0.8}
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 10.0
+      publish_frequency: 10.0
+      global_frame: odom
+      robot_base_frame: base_link
+      rolling_window: true
+      width: 6
+      height: 6
+      resolution: 0.05
+      transform_tolerance: 0.30
+      footprint: "[[-0.375,-0.225],[-0.375,0.225],[0.375,0.225],[0.375,-0.225]]"
+      # User-specified final cyan footprint: 0.75 m long x 0.45 m wide.
+      footprint_padding: 0.0
+      plugins: ["obstacle_layer", "inflation_layer"]
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        footprint_clearing_enabled: true
+        # Height selection already happened in base_link upstream. The layer
+        # itself also filters world Z, independently of each source buffer.
+        min_obstacle_height: -5.0
+        max_obstacle_height: 5.0
+        # Mark from the same height-filtered cloud as Collision Monitor.
+        # Also clear along observed full-cloud background returns (including
+        # ground); missing returns are never synthesized as free-space rays.
+        observation_sources: "mid360_scan mid360_clear"
+        mid360_scan:
+          topic: /cloud_obstacles
+          data_type: "PointCloud2"
+          clearing: true
+          marking: true
+          # /cloud_obstacles already selects 0.05..0.80 m in base_link.
+          # The saved magic2 map spans several metres in world Z; keep those
+          # observations after TF instead of filtering them again near Z=0.
+          min_obstacle_height: -5.0
+          max_obstacle_height: 5.0
+          obstacle_max_range: 5.0
+          raytrace_max_range: 6.0
+          obstacle_min_range: 0.12
+          raytrace_min_range: 0.12
+          # The measured stream is about 10 Hz with normal scheduling jitter.
+          expected_update_rate: 0.25
+          observation_persistence: 0.0
+        mid360_clear:
+          topic: /cloud_registered_body
+          data_type: "PointCloud2"
+          sensor_frame: lidar_link
+          marking: false
+          clearing: true
+          min_obstacle_height: -10.0
+          max_obstacle_height: 10.0
+          raytrace_min_range: 0.12
+          raytrace_max_range: 6.0
+          # Clearing is optional evidence of free space. A delayed background
+          # cloud must not make the entire costmap stale; marking stays gated.
+          expected_update_rate: 0.0
+          observation_persistence: 0.0
+      # User-selected radius, below the current footprint half-diagonal
+      # hypot(0.375, 0.225) = 0.437 m. Revalidate rectangular-body corner clearance.
+      inflation_layer: {plugin: "nav2_costmap_2d::InflationLayer", inflation_radius: 0.30, cost_scaling_factor: 6.0}
+      always_send_full_costmap: true
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      use_sim_time: false
+      update_frequency: 5.0
+      publish_frequency: 5.0
+      global_frame: map
+      robot_base_frame: base_link
+      resolution: 0.05
+      track_unknown_space: true
+      transform_tolerance: 0.35
+      footprint: "[[-0.375,-0.225],[-0.375,0.225],[0.375,0.225],[0.375,-0.225]]"
+      # User-specified final cyan footprint: 0.75 m long x 0.45 m wide.
+      footprint_padding: 0.0
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      static_layer: {plugin: "nav2_costmap_2d::StaticLayer", map_subscribe_transient_local: true}
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        footprint_clearing_enabled: true
+        min_obstacle_height: -5.0
+        max_obstacle_height: 5.0
+        observation_sources: "mid360_scan mid360_clear"
+        mid360_scan:
+          topic: /cloud_obstacles
+          data_type: "PointCloud2"
+          clearing: true
+          marking: true
+          # Height selection occurs upstream in base_link, not map Z.
+          min_obstacle_height: -5.0
+          max_obstacle_height: 5.0
+          obstacle_max_range: 5.0
+          raytrace_max_range: 6.0
+          obstacle_min_range: 0.12
+          raytrace_min_range: 0.12
+          expected_update_rate: 0.25
+          observation_persistence: 0.0
+        mid360_clear:
+          topic: /cloud_registered_body
+          data_type: "PointCloud2"
+          sensor_frame: lidar_link
+          marking: false
+          clearing: true
+          min_obstacle_height: -10.0
+          max_obstacle_height: 10.0
+          raytrace_min_range: 0.12
+          raytrace_max_range: 6.0
+          expected_update_rate: 0.0
+          observation_persistence: 0.0
+      inflation_layer: {plugin: "nav2_costmap_2d::InflationLayer", inflation_radius: 0.40, cost_scaling_factor: 3.0}
+      # RViz consumes costmap_updates; avoid resending the whole 1074x1106 map.
+      always_send_full_costmap: false
+
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    global_frame: map
+    robot_base_frame: base_link
+    odom_topic: /odom
+    bt_loop_duration: 10
+    default_server_timeout: 20
+
+behavior_server:
+  ros__parameters:
+    use_sim_time: false
+    local_costmap_topic: local_costmap/costmap_raw
+    global_costmap_topic: global_costmap/costmap_raw
+    local_footprint_topic: local_costmap/published_footprint
+    global_footprint_topic: global_costmap/published_footprint
+    cycle_frequency: 10.0
+    behavior_plugins: ["spin", "backup", "wait"]
+    spin: {plugin: "nav2_behaviors/Spin"}
+    backup: {plugin: "nav2_behaviors/BackUp"}
+    wait: {plugin: "nav2_behaviors/Wait"}
+    global_frame: odom
+    robot_base_frame: base_link
+    transform_tolerance: 0.2
+    simulate_ahead_time: 1.5
+    max_rotational_vel: 0.45
+    min_rotational_vel: 0.15
+    rotational_acc_lim: 0.8
+
+collision_monitor:
+  ros__parameters:
+    use_sim_time: false
+    base_frame_id: base_link
+    odom_frame_id: odom
+    # Keep Collision Monitor last so emergency stops bypass acceleration limits.
+    cmd_vel_in_topic: /cmd_vel_smoothed
+    cmd_vel_out_topic: /cmd_vel
+    state_topic: /collision_monitor_state
+    transform_tolerance: 0.05
+    source_timeout: 0.3
+    prediction_timeout: 0.15
+    command_timeout: 0.3
+    base_shift_correction: true
+    stop_pub_timeout: 1.0
+    # The orange protection envelope is generated from measured/target motion.
+    # Static emergency stop remains independent and has highest priority.
+    polygons: ["StopZone"]
+    dynamic_slowdown:
+      enabled: true
+      odom_topic: /odom
+      odom_timeout: 0.15
+      max_processing_time: 0.08
+      body_length: 0.75
+      body_width: 0.45
+      margin: 0.04
+      reaction_time: 0.20  # additional controller/actuator budget; source age is added
+      preview_time: 0.60
+      # Initial conservative assumptions, requiring physical braking validation.
+      linear_braking: 0.50
+      angular_braking: 0.80
+      linear_acceleration: 0.40
+      angular_acceleration: 1.0
+      recovery_acceleration: 0.40
+      recovery_angular_acceleration: 1.0
+      release_hold: 0.15
+      step_time: 0.04
+      step_distance: 0.01
+      max_linear_speed: 1.5
+      max_angular_speed: 2.0
+      scale_samples: 16
+      refinement_steps: 5
+    StopZone:
+      type: "polygon"
+      # Independent red emergency-stop zone, unchanged by dynamic slowdown.
+      points: [0.50, 0.30, 0.50, -0.30, -0.48, -0.30, -0.48, 0.30]
+      action_type: "stop"
+      # Humble triggers when the number of points is greater than max_points.
+      # With this compact user-specified zone, one valid point must stop.
+      max_points: 0
+      visualize: true
+      polygon_pub_topic: /collision_monitor/stop_zone
+    observation_sources: ["mid360"]
+    mid360: {type: "pointcloud", topic: /cloud_obstacles, min_height: 0.05, max_height: 0.80, enabled: true}
+
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: false
+    smoothing_frequency: 20.0
+    scale_velocities: true
+    feedback: "OPEN_LOOP"
+    max_velocity: [0.60, 0.0, 0.70]
+    min_velocity: [-0.18, 0.0, -0.70]
+    max_accel: [0.40, 0.0, 1.00]
+    max_decel: [-0.80, 0.0, -1.20]
+    odom_topic: /odom
+    odom_duration: 0.1
+    deadband_velocity: [0.02, 0.0, 0.02]
+    velocity_timeout: 0.30

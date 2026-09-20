@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-20",
+  "modified_source_files": [
+    "src/go2w_nav2_bridge/src/cmd_vel_to_sport.cpp",
+    "src/go2w_nav2_navigation/CMakeLists.txt",
+    "src/go2w_nav2_navigation/config/nav2_go2w.yaml",
+    "src/go2w_nav2_navigation/launch/go2w_navigation.launch.py",
+    "src/go2w_nav2_navigation/package.xml",
+    "src/go2w_nav2_navigation/test/check_tf_pipeline.py",
+    "src/open3d_loc/launch/open3d_loc_g1.launch.py",
+    "src/open3d_loc/src/global_localization.cpp",
+    "src/ws_fastlio2/CMakeLists.txt",
+    "src/ws_fastlio2/Log/mat_pre.txt",
+    "src/ws_fastlio2/src/IMU_Processing.hpp",
+    "src/ws_fastlio2/src/laserMapping.cpp"
+  ],
+  "new_source_files": [
+    "src/ws_fastlio2/msg/EstimatorState.msg",
+    "src/go2w_nav2_navigation/include/go2w_nav2_navigation/imu_prediction.hpp",
+    "src/go2w_nav2_navigation/src/fastlio_imu_odometry.cpp",
+    "src/go2w_nav2_navigation/src/safe_collision_monitor.cpp",
+    "src/go2w_nav2_navigation/test/test_imu_prediction.cpp",
+    "src/go2w_nav2_navigation/test/check_prediction_pipeline.py"
+  ],
+  "additional_updates": [
+    "scripts/check_tf_timing.py",
+    "reports/Go2W_建图定位导航优化报告_2026-09-20.md",
+    "reports/tf_prediction_20260920/README.md"
+  ],
+  "backup_directory": "config_backups/tf_prediction_20260920"
+}

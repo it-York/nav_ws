@@ -1,0 +1,11 @@
+1789884508.590579 [190] fastlio_im: selected interface "lo" is not multicast-capable: disabling multicast
+[WARN] [1789884508.637262090] [odom_prediction]: Prediction unavailable: waiting_for_anchor_and_imu
+[WARN] [1789884524.698113337] [odom_prediction]: Prediction unavailable: input_receipt_timeout
+[WARN] [1789884529.502631297] [odom_prediction]: Prediction unavailable: imu_clock_rollback_restart_required
+[INFO] [1789884530.003127930] [rclcpp]: signal_handler(signum=2)
+1789884530.346528 [190] fastlio_im: selected interface "lo" is not multicast-capable: disabling multicast
+[WARN] [1789884530.393023214] [odom_prediction]: Prediction unavailable: waiting_for_anchor_and_imu
+[INFO] [1789884532.321831740] [rclcpp]: signal_handler(signum=2)
+1789884532.663038 [190] fastlio_im: selected interface "lo" is not multicast-capable: disabling multicast
+[WARN] [1789884532.698233208] [odom_prediction]: Prediction unavailable: waiting_for_anchor_and_imu
+[INFO] [1789884534.144653420] [rclcpp]: signal_handler(signum=2)

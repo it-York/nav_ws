@@ -1,0 +1,48 @@
+{
+  "sensor_height_estimate_m": 0.5522035799489406,
+  "ground_tiles": 1609,
+  "ground_z_percentiles_m": [
+    -3.3874551706730163,
+    -2.6838923102137966,
+    -1.5961844037188273,
+    -0.4783158240343371,
+    -0.024037319345894398
+  ],
+  "trajectory_z_range_m": [
+    -2.6358981281348295,
+    0.0715447763214921
+  ],
+  "global_ground_trend_abc": [
+    -0.04325680157173976,
+    0.026122322798392758,
+    -0.20677150551629234
+  ],
+  "ground_method": "trajectory_prior_and_local_observed_floor",
+  "supported_ground_fraction": 0.9889846394896618,
+  "source_pcd": "/home/koala2/nav_ws/maps/magic2_loop.pcd",
+  "poses_csv": "/home/koala2/nav_ws/maps/magic2_loop.pcd.keyframes_8151498739720/poses.csv",
+  "height_range_above_ground_m": [
+    0.15,
+    1.5
+  ],
+  "resolution_m": 0.05,
+  "occupied_radius_m": 0.1,
+  "free_radius_m": 0.18,
+  "input_points": 357410,
+  "floor_points": 53286,
+  "obstacle_points": 72026,
+  "isolated_obstacle_points_removed": 270,
+  "width": 1074,
+  "height": 1106,
+  "origin": [
+    -9.5,
+    -43.0,
+    0.0
+  ],
+  "cells": {
+    "occupied": 126607,
+    "free": 218591,
+    "unknown": 842646
+  },
+  "note": "Local height projection preserves XY; it does not repair SLAM distortion."
+}

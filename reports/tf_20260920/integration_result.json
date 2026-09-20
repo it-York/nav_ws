@@ -1,0 +1,19 @@
+{
+  "work_directory": "/tmp/nav_ws_tf_test_306__441",
+  "checks": [
+    "Initialization and both TF edges; original measurement timestamps preserved",
+    "Repeated old cloud cannot renew health; odometry continues after registration expires",
+    "Fresh cloud restores localization health",
+    "Odometry outage invalidates health independently of fresh clouds",
+    "Initial-pose reset invalidates health until fresh registration reinitializes",
+    "Duplicate, stale, future, NaN and wrong-frame odometry rejected",
+    "Base-frame finite-difference velocity reports 0.6 m/s"
+  ],
+  "bridge_processing_ms": {
+    "samples": 103,
+    "median": 0.30426299571990967,
+    "p95": 0.41665101051330566,
+    "max": 0.5683990120887756
+  },
+  "success": true
+}

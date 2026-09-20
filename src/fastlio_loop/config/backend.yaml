@@ -1,0 +1,33 @@
+fastlio_loop_backend:
+  ros__parameters:
+    map_frame: map
+    odom_frame: camera_init
+    body_frame: body
+    keyframe_distance: 0.75
+    keyframe_angle: 0.25
+    min_loop_age: 30.0
+    min_loop_separation: 25
+    search_radius: 8.0
+    submap_neighbors: 3
+    max_candidates: 3
+    confirmation_count: 2
+    confirmation_distance: 0.5
+    confirmation_angle: 0.12
+    loop_cooldown: 10
+    max_keyframes: 2000
+    cloud_max_range: 40.0
+    map_leaf: 0.10
+    map_publish_period: 5.0
+    queue_limit: 20
+    overwrite_map: false
+    registration:
+      leaf: 0.25
+      coarse_distance: 3.0
+      inlier_distance: 0.35
+      min_overlap: 0.65
+      min_reverse_overlap: 0.30
+      max_rmse: 0.18
+      min_observability: 0.0001
+      max_correction: 6.0
+      max_rotation: 0.8
+      min_inliers: 150

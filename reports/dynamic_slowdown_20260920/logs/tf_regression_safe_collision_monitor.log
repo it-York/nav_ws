@@ -1,0 +1,21 @@
+1789887764.109904 [190] safe_colli: selected interface "lo" is not multicast-capable: disabling multicast
+[INFO] [1789887764.122818752] [collision_monitor]: 
+	collision_monitor lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1789887765.084433875] [collision_monitor]: Configuring
+[INFO] [1789887765.090536038] [collision_monitor]: [StopZone]: Creating Polygon
+[INFO] [1789887765.092234657] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887765.095091204] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887765.095703001] [collision_monitor]: [mid360]: Creating PointCloud
+[INFO] [1789887765.128525258] [collision_monitor]: Activating
+[INFO] [1789887765.128735057] [collision_monitor]: Creating bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887789.659092204] [rclcpp]: signal_handler(signum=2)
+[INFO] [1789887789.659317139] [collision_monitor]: Running Nav2 LifecycleNode rcl preshutdown (collision_monitor)
+[INFO] [1789887789.659579932] [collision_monitor]: Deactivating
+[INFO] [1789887789.659641599] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887789.670010566] [collision_monitor]: Cleaning up
+[INFO] [1789887789.670153739] [collision_monitor]: [StopZone]: Destroying Polygon
+[INFO] [1789887789.670189165] [collision_monitor]: [mid360]: Destroying PointCloud
+[INFO] [1789887789.673541601] [collision_monitor]: Destroying bond (collision_monitor) to lifecycle manager.
+[INFO] [1789887789.808354278] [collision_monitor]: Destroying

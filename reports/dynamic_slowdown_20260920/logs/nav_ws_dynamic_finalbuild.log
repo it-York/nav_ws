@@ -1,0 +1,14 @@
+[ 10%] Built target fastlio_imu_odometry
+[ 20%] Built target fastlio_odom_bridge
+Consolidate compiler generated dependencies of target safe_collision_monitor
+[ 30%] Built target cloud_to_scan
+[ 35%] Building CXX object CMakeFiles/safe_collision_monitor.dir/src/safe_collision_monitor.cpp.o
+[ 45%] Built target cloud_obstacle_filter
+[ 55%] Built target gtest_main
+[ 65%] Built target gtest
+Consolidate compiler generated dependencies of target test_dynamic_slowdown
+[ 75%] Built target test_dynamic_slowdown
+[ 85%] Built target test_imu_prediction
+[ 95%] Built target test_odom_kinematics
+[100%] Linking CXX executable safe_collision_monitor
+[100%] Built target safe_collision_monitor

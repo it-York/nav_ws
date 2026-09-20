@@ -1,0 +1,4 @@
+.vscode
+build
+# Keep the selected ROS 2 manifest in the complete navigation workspace snapshot.
+__pycache__

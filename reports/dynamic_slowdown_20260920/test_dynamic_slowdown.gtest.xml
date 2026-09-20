@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13" failures="0" disabled="0" errors="0" time="0.201" timestamp="2026-09-20T14:56:03" name="AllTests">
+  <testsuite name="DynamicSlowdown" tests="13" failures="0" disabled="0" errors="0" time="0.201" timestamp="2026-09-20T14:56:03">
+    <testcase name="ParallelSideWallsDoNotLimitStraightMotion" status="run" result="completed" time="0.024" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="ForwardObstacleLimitsContinuously" status="run" result="completed" time="0.029" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="ReverseProtectsRearAndIgnoresDistantFront" status="run" result="completed" time="0.011" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="RotationCoversFrontAndRearCorners" status="run" result="completed" time="0.034" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="MeasuredInertiaSurvivesZeroOrReverseCommand" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="BrakingDistanceMatchesConstantDeceleration" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="LatencyExpandsBrakingEnvelope" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="RecoveryIsBoundedAndKeepsRequestedCurvature" status="run" result="completed" time="0.004" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="HazardReductionIsImmediateAndReleaseHeld" status="run" result="completed" time="0.008" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="NarrowObstacleBetweenSamplesIsDetected" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="InvalidMotionAndConfigurationFailClosed" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="ObstacleIndexIncludesRectangleInterior" status="run" result="completed" time="0" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown" />
+    <testcase name="DenseWallCloudRuntime" status="run" result="completed" time="0.091" timestamp="2026-09-20T14:56:03" classname="go2w_nav2_navigation.DynamicSlowdown">
+<properties>
+<property name="mean_processing_ms" value="0.903713"/>
+</properties>
+    </testcase>
+  </testsuite>
+</testsuites>

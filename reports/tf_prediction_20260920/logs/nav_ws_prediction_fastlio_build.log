@@ -1,0 +1,167 @@
+Current CPU archtecture: aarch64
+-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found version "3.10.12") 
+-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_components: 16.0.12 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found nav_msgs: 4.8.0 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found std_srvs: 4.8.0 (/opt/ros/humble/share/std_srvs/cmake)
+-- Found visualization_msgs: 4.8.0 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- FLANN found (include: /usr/include, lib: /usr/lib/aarch64-linux-gnu/libflann_cpp.so)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/aarch64-linux-gnu/libOpenNI2.so;libusb::libusb)
+-- Found Qhull version 8.0.2
+-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found livox_ros_driver2: 1.0.0 (/home/koala2/nav_ws/install/livox_ros_driver2/share/livox_ros_driver2/cmake)
+-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+CMake Warning (dev) at CMakeLists.txt:81 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+Eigen:/usr/include/eigen3
+-- PCL: /usr/include/pcl-1.12
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+-- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+-- Using numpy include directory: /usr/local/lib/python3.10/dist-packages/numpy/core/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/koala2/nav_ws/build/fast_lio
+[  2%] Generating C code for ROS interfaces
+[  4%] Generating C++ code for ROS interfaces
+Consolidate compiler generated dependencies of target fast_lio__rosidl_generator_c
+[  6%] Building C object CMakeFiles/fast_lio__rosidl_generator_c.dir/rosidl_generator_c/fast_lio/msg/detail/pose6_d__functions.c.o
+[  6%] Built target fast_lio__cpp
+[  9%] Building C object CMakeFiles/fast_lio__rosidl_generator_c.dir/rosidl_generator_c/fast_lio/msg/detail/estimator_state__functions.c.o
+[ 11%] Linking C shared library libfast_lio__rosidl_generator_c.so
+[ 11%] Built target ament_cmake_python_symlink_fast_lio
+[ 13%] Generating C++ type support dispatch for ROS interfaces
+[ 13%] Built target fast_lio__rosidl_generator_c
+[ 16%] Generating C++ type support for eProsima Fast-RTPS
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_cpp
+[ 18%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fast_lio/msg/pose6_d__type_support.cpp.o
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_fastrtps_cpp
+[ 20%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fast_lio/msg/detail/dds_fastrtps/pose6_d__type_support.cpp.o
+[ 23%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/fast_lio/msg/estimator_state__type_support.cpp.o
+[ 25%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/fast_lio/msg/detail/dds_fastrtps/estimator_state__type_support.cpp.o
+[ 27%] Linking CXX shared library libfast_lio__rosidl_typesupport_cpp.so
+[ 27%] Built target fast_lio__rosidl_typesupport_cpp
+[ 30%] Generating C introspection for ROS interfaces
+[ 32%] Linking CXX shared library libfast_lio__rosidl_typesupport_fastrtps_cpp.so
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_introspection_c
+[ 34%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fast_lio/msg/detail/pose6_d__type_support.c.o
+[ 37%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/fast_lio/msg/detail/estimator_state__type_support.c.o
+[ 37%] Built target fast_lio__rosidl_typesupport_fastrtps_cpp
+[ 39%] Generating C type support dispatch for ROS interfaces
+[ 41%] Linking C shared library libfast_lio__rosidl_typesupport_introspection_c.so
+[ 41%] Built target fast_lio__rosidl_typesupport_introspection_c
+[ 44%] Generating C++ introspection for ROS interfaces
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_c
+[ 46%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_c.dir/rosidl_typesupport_c/fast_lio/msg/pose6_d__type_support.cpp.o
+[ 48%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_c.dir/rosidl_typesupport_c/fast_lio/msg/estimator_state__type_support.cpp.o
+[ 51%] Linking CXX shared library libfast_lio__rosidl_typesupport_c.so
+[ 51%] Built target fast_lio__rosidl_typesupport_c
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_introspection_cpp
+[ 53%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/pose6_d__type_support.cpp.o
+running egg_info
+writing fast_lio.egg-info/PKG-INFO
+writing dependency_links to fast_lio.egg-info/dependency_links.txt
+writing top-level names to fast_lio.egg-info/top_level.txt
+reading manifest file 'fast_lio.egg-info/SOURCES.txt'
+writing manifest file 'fast_lio.egg-info/SOURCES.txt'
+[ 53%] Built target ament_cmake_python_build_fast_lio_egg
+Consolidate compiler generated dependencies of target fastlio_mapping
+[ 55%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/laserMapping.cpp.o
+[ 58%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/fast_lio/msg/detail/estimator_state__type_support.cpp.o
+[ 60%] Linking CXX shared library libfast_lio__rosidl_typesupport_introspection_cpp.so
+[ 60%] Built target fast_lio__rosidl_typesupport_introspection_cpp
+[ 62%] Building CXX object CMakeFiles/fastlio_mapping.dir/include/ikd-Tree/ikd_Tree.cpp.o
+[ 65%] Building CXX object CMakeFiles/fastlio_mapping.dir/src/preprocess.cpp.o
+In file included from /usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:22,
+                 from /usr/include/boost/smart_ptr/detail/yield_k.hpp:23,
+                 from /usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:14,
+                 from /usr/include/boost/smart_ptr/detail/spinlock.hpp:42,
+                 from /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:25,
+                 from /usr/include/boost/smart_ptr/shared_ptr.hpp:29,
+                 from /usr/include/boost/shared_ptr.hpp:17,
+                 from /usr/include/boost/date_time/microsec_time_clock.hpp:18,
+                 from /usr/include/boost/interprocess/detail/posix_time_types_wrk.hpp:31,
+                 from /usr/include/boost/interprocess/detail/os_thread_functions.hpp:36,
+                 from /usr/include/boost/interprocess/sync/file_lock.hpp:26,
+                 from /usr/include/pcl-1.12/pcl/io/pcd_io.h:46,
+                 from /opt/ros/humble/include/pcl_conversions/pcl_conversions/pcl_conversions.h:73,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/src/IMU_Processing.hpp:18,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/src/laserMapping.cpp:48:
+/usr/include/boost/bind.hpp:36:1: note: ‘#pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.’
+   36 | BOOST_PRAGMA_MESSAGE(
+      | ^~~~~~~~~~~~~~~~~~~~
+[ 67%] Generating C type support for eProsima Fast-RTPS
+In file included from /home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/../mtk/types/SOn.hpp:83,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/esekfom.hpp:49,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/include/use-ikfom.hpp:4,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/src/IMU_Processing.hpp:22,
+                 from /home/koala2/nav_ws/src/ws_fastlio2/src/laserMapping.cpp:48:
+/home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp: In instantiation of ‘std::pair<_FIter, _FIter> MTK::cos_sinc_sqrt(const scalar&) [with scalar = double]’:
+/home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:252:52:   required from ‘scalar MTK::exp(MTK::vectview<scalar, dim>, MTK::vectview<const scalar, dim>, const scalar&) [with scalar = double; int n = 3]’
+/home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/../mtk/types/S2.hpp:140:32:   required from ‘void MTK::S2<_scalar, den, num, S2_typ>::boxplus(MTK::vectview<const _scalar, 2>, MTK::S2<_scalar, den, num, S2_typ>::scalar) [with _scalar = double; int den = 98090; int num = 10000; int S2_typ = 1; MTK::S2<_scalar, den, num, S2_typ>::scalar = double]’
+/home/koala2/nav_ws/src/ws_fastlio2/include/use-ikfom.hpp:12:1:   required from here
+/home/koala2/nav_ws/src/ws_fastlio2/include/IKFoM_toolkit/esekfom/../mtk/types/../src/mtkmath.hpp:143:27: note: parameter passing for argument of type ‘std::pair<double, double>’ when C++17 is enabled changed to match C++14 in GCC 10.1
+  143 | std::pair<scalar, scalar> cos_sinc_sqrt(const scalar &x2){
+      |                           ^~~~~~~~~~~~~
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_fastrtps_c
+[ 69%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fast_lio/msg/detail/pose6_d__type_support_c.cpp.o
+[ 72%] Building CXX object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/fast_lio/msg/detail/estimator_state__type_support_c.cpp.o
+[ 74%] Linking CXX shared library libfast_lio__rosidl_typesupport_fastrtps_c.so
+[ 74%] Built target fast_lio__rosidl_typesupport_fastrtps_c
+[ 74%] Built target fast_lio
+[ 76%] Generating Python code for ROS interfaces
+[ 76%] Built target fast_lio__py
+Consolidate compiler generated dependencies of target fast_lio__rosidl_generator_py
+[ 79%] Building C object CMakeFiles/fast_lio__rosidl_generator_py.dir/rosidl_generator_py/fast_lio/msg/_pose6_d_s.c.o
+[ 81%] Building C object CMakeFiles/fast_lio__rosidl_generator_py.dir/rosidl_generator_py/fast_lio/msg/_estimator_state_s.c.o
+[ 83%] Linking C shared library rosidl_generator_py/fast_lio/libfast_lio__rosidl_generator_py.so
+[ 83%] Built target fast_lio__rosidl_generator_py
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_fastrtps_c__pyext
+[ 86%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_fastrtps_c.c.o
+[ 88%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[ 88%] Built target fast_lio__rosidl_typesupport_fastrtps_c__pyext
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_introspection_c__pyext
+[ 90%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_introspection_c.c.o
+[ 93%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[ 93%] Built target fast_lio__rosidl_typesupport_introspection_c__pyext
+Consolidate compiler generated dependencies of target fast_lio__rosidl_typesupport_c__pyext
+[ 95%] Building C object CMakeFiles/fast_lio__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/fast_lio/_fast_lio_s.ep.rosidl_typesupport_c.c.o
+[ 97%] Linking C shared library rosidl_generator_py/fast_lio/fast_lio_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[ 97%] Built target fast_lio__rosidl_typesupport_c__pyext
+[100%] Linking CXX executable fastlio_mapping
+[100%] Built target fastlio_mapping

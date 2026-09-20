@@ -1,0 +1,17 @@
+{
+  "before": {
+    "observed_background_clear_delay_s": null,
+    "last_cost": 254,
+    "missing_returns_keep_obstacle": true
+  },
+  "after": {
+    "observed_background_clear_delay_s": 0.08177135100049782,
+    "last_cost": 0,
+    "missing_returns_keep_obstacle": true,
+    "empty_last_vx": 0.6,
+    "near_wall_last_vx": 0.33,
+    "stop_last_vx": 0.0,
+    "turn_last_vx": 0.0,
+    "empty_last_wz": 0.7
+  }
+}

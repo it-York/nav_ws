@@ -1,0 +1,14 @@
+{
+  "before": {
+    "poses": 91,
+    "dense_samples": 548,
+    "padded_footprint_colliding_samples": 140,
+    "min_center_distance_to_occupied_cell_m": 0.28284271247461906
+  },
+  "after": {
+    "poses": 102,
+    "dense_samples": 608,
+    "padded_footprint_colliding_samples": 0,
+    "min_center_distance_to_occupied_cell_m": 0.670820393249937
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "work_directory": "/tmp/nav_ws_dynamic_test_jcdsryq5",
+  "checks": [
+    "Fresh odometry, prediction and cloud permit forward command after smooth startup",
+    "0.8 m parallel-wall corridor does not trigger old fixed-width slowdown",
+    "Forward obstacle produces geometry/braking-based continuous speed reduction",
+    "Obstacle removal restores speed with bounded increments",
+    "Left turn sweeps front corner; orange markers rotate and expand with motion",
+    "Turning away from the same side obstacle is allowed after recovery",
+    "Rotation also protects the rear corner sweep",
+    "Reverse protects rear obstacle and does not react to distant front obstacle",
+    "Zero target speed cannot hide measured forward inertia",
+    "Unchanged red StopZone overrides dynamic slowdown immediately",
+    "missing_odom stops; valid data recovers smoothly",
+    "stale_odom stops; valid data recovers smoothly",
+    "invalid_odom stops; valid data recovers smoothly",
+    "missing_prediction stops; valid data recovers smoothly",
+    "missing_cloud stops; valid data recovers smoothly",
+    "bad_tf stops; valid data recovers smoothly",
+    "missing_command stops; valid data recovers smoothly",
+    "Startup-only model rejects misleading runtime parameter updates",
+    "Lifecycle cleanup/reconfigure/activate resets output and requires fresh prediction"
+  ],
+  "forward_limited_speed_m_s": 0.30678977610282,
+  "max_recovery_increment_m_s": 0.024362614800000015,
+  "left_turn_limited_rad_s": 0.4448365157436038,
+  "reverse_limited_speed_m_s": -0.11929863025094511,
+  "processing_ms": {
+    "samples": 729,
+    "median": 10.847092628479004,
+    "p95": 20.973873138427734,
+    "max": 51.27814865112305
+  },
+  "success": true
+}

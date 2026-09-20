@@ -1,0 +1,30 @@
+1789884508.587717 [190] cmd_vel_to: selected interface "lo" is not multicast-capable: disabling multicast
+1789884508.587717 [190] cmd_vel_to: selected interface "lo" is not multicast-capable: disabling multicast
+[INFO] [1789884508.602437505] [cmd_vel_to_sport]: Go2 velocity bridge ready (rate 20.0 Hz, cmd timeout 0.30 s, localization guard disabled, obstacle-cloud guard enabled, min linear 0.00 m/s, min yaw 0.00 rad/s)
+[INFO] [1789884508.617723690] [guard_test_bridge]: Go2 velocity bridge ready (rate 20.0 Hz, cmd timeout 0.30 s, localization guard disabled, obstacle-cloud guard enabled, min linear 0.00 m/s, min yaw 0.00 rad/s)
+[WARN] [1789884520.653272055] [cmd_vel_to_sport]: local obstacle map stale; sent StopMove to Go2
+[WARN] [1789884521.653293663] [cmd_vel_to_sport]: local obstacle map stale; sent StopMove to Go2
+[WARN] [1789884524.703429029] [cmd_vel_to_sport]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884524.718768619] [guard_test_bridge]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884525.753559818] [cmd_vel_to_sport]: local obstacle map stale; sent StopMove to Go2
+[WARN] [1789884526.718988362] [guard_test_bridge]: odometry invalid or stale; sent StopMove to Go2
+[WARN] [1789884527.418923451] [guard_test_bridge]: odometry invalid or stale; sent StopMove to Go2
+[WARN] [1789884528.118993418] [guard_test_bridge]: local obstacle map stale; sent StopMove to Go2
+[WARN] [1789884528.803351188] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884528.853401515] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884528.904980367] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884528.955693703] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884529.006109648] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884529.057502601] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884529.107986709] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884529.158605223] [guard_test_bridge]: nonfinite cmd_vel; sent StopMove to Go2
+[WARN] [1789884529.503638676] [cmd_vel_to_sport]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884529.519026458] [guard_test_bridge]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884531.353791417] [cmd_vel_to_sport]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884531.369137309] [guard_test_bridge]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884533.654019605] [cmd_vel_to_sport]: IMU prediction invalid or stale; sent StopMove to Go2
+[WARN] [1789884533.669199727] [guard_test_bridge]: IMU prediction invalid or stale; sent StopMove to Go2
+[INFO] [1789884534.141423402] [rclcpp]: signal_handler(signum=2)
+[INFO] [1789884534.141429674] [rclcpp]: signal_handler(signum=2)
+[WARN] [1789884534.141856544] [guard_test_bridge]: bridge shutting down; sent StopMove to Go2
+[WARN] [1789884534.142219122] [cmd_vel_to_sport]: bridge shutting down; sent StopMove to Go2

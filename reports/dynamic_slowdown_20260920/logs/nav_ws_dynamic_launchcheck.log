@@ -1,0 +1,64 @@
+ROS 2 workspace: /home/koala2/nav_ws
+Go2-W DDS interface: enx00e04c356b10
+ROS_DOMAIN_ID: 0
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'enable_motion':
+        no description given
+        (default: 'false')
+
+    'start_rviz':
+        no description given
+        (default: 'true')
+
+    'use_sim_time':
+        no description given
+        (default: 'false')
+
+    'map':
+        no description given
+        (default: '/home/koala2/nav_ws/maps/magic1.yaml')
+
+    'pcd_map':
+        no description given
+        (default: '/home/koala2/nav_ws/maps/magic1.pcd')
+
+    'params_file':
+        no description given
+        (default: '/home/koala2/nav_ws/install/go2w_nav2_navigation/share/go2w_nav2_navigation/config/nav2_go2w.yaml')
+
+    'fast_lio_delay':
+        no description given
+        (default: '3.0')
+
+    'localization_delay':
+        no description given
+        (default: '10.0')
+
+    'navigation_delay':
+        no description given
+        (default: '20.0')
+
+    'config_path':
+        Yaml config file path
+        (default: '/home/koala2/nav_ws/install/fast_lio/share/fast_lio/config')
+
+    'config_file':
+        Config file
+        (default: 'mid360.yaml')
+
+    'rviz':
+        Use RViz to monitor results
+        (default: 'true')
+
+    'rviz_cfg':
+        RViz config file path
+        (default: '/home/koala2/nav_ws/install/fast_lio/share/fast_lio/rviz/fastlio.rviz')
+
+    'use_prediction_tf':
+        no description given
+        (default: 'false')
+
+    'registration_threads':
+        no description given
+        (default: '2')

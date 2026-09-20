@@ -1,0 +1,26 @@
+/build/
+/install/
+/log/
+/.agents/
+/.codex/
+
+__pycache__/
+*.py[cod]
+
+*.pcd
+*.pdf
+# Navigation map assets and mounting drawing belong to the workspace snapshot.
+!/maps/**/*.pcd
+!/2.pdf
+
+/config_backups/
+/exports/
+/recordings/
+/symlink_install_manifest.txt
+/waypoints/*.json.lock
+
+/src/ws_fastlio2/Log/
+/src/ws_fastlio2/PCD/
+/src/ws_fastlio2/doc/
+/third_party/Livox-SDK2/build/
+/third_party/livox_sdk2_install/
